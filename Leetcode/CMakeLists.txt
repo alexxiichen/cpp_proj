@@ -1,0 +1,9 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
+PROJECT(Leetcode VERSION 0.1.0)
+
+INCLUDE(CTest)
+ENABLE_TESTING()
+
+ADD_EXECUTABLE(two_sum two_sum.cc)
+
+ADD_EXECUTABLE(add_two_numbers add_two_numbers.cc)

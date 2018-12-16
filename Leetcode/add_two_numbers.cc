@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 struct ListNode
@@ -11,7 +12,8 @@ class Solution
 {
   public:
     // fuck 这里理解错了题意，是倒序的
-    static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    // 正序的，但是会溢出
+    static ListNode* addTwoNumbers_positive(ListNode* l1, ListNode* l2)
     {
         unsigned int value1 = 0;
         unsigned int value2 = 0;
@@ -41,7 +43,6 @@ class Solution
             if (i == 0)
             {
                 headSumlist = sumlist = new ListNode(str[i] - '0');
-                // sumlist               = sumlist->next;
             }
             else
             {
@@ -50,6 +51,84 @@ class Solution
             }
         }
         return headSumlist;
+    }
+
+    // 倒序的，但是会溢出
+    static ListNode* addTwoNumbers_revers(ListNode* l1, ListNode* l2)
+    {
+        unsigned int value1 = l1->val;
+        unsigned int value2 = l2->val;
+        unsigned int sum    = 0;
+
+        for (int i = 1; (l1 = l1->next) != nullptr; i++)
+        {
+            value1 = value1 + l1->val * std::pow(10, i);
+        }
+        // std::cout << value1 << std::endl;
+
+        for (int i = 1; (l2 = l2->next) != nullptr; i++)
+        {
+            value2 = value2 + l2->val * std::pow(10, i);
+        }
+        // std::cout << value2 << std::endl;
+
+        sum = value1 + value2;
+        // std::cout << sum << std::endl;
+
+        ListNode* headSumlist = nullptr;
+        ListNode* sumlist     = nullptr;
+        char      str[256];
+        int       i = 0;
+
+        for (i = 0; sum > 0; i++)
+        {
+            str[i] = sum % 10 + '0';
+            sum    = sum / 10;
+        }
+        str[i] = '\0';
+        // std::cout << str << std::endl;
+
+        for (int i = 0; str[i] != '\0'; i++)
+        {
+            if (i == 0)
+            {
+                headSumlist = sumlist = new ListNode(str[i] - '0');
+            }
+            else
+            {
+                sumlist->next = new ListNode(str[i] - '0');
+                sumlist       = sumlist->next;
+            }
+        }
+        return headSumlist;
+    }
+
+    //正确答案，不会溢出
+    static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    {
+        ListNode* dummyHead = new ListNode(0);
+        ListNode* p         = l1;
+        ListNode* q         = l2;
+        ListNode* curr      = dummyHead;
+        int       carry     = 0;
+        while (p != nullptr || q != nullptr)
+        {
+            int x      = (p != nullptr) ? p->val : 0;
+            int y      = (q != nullptr) ? q->val : 0;
+            int sum    = carry + x + y;
+            carry      = sum / 10;
+            curr->next = new ListNode(sum % 10);
+            curr       = curr->next;
+            if (p != nullptr)
+                p = p->next;
+            if (q != nullptr)
+                q = q->next;
+        }
+        if (carry > 0)
+        {
+            curr->next = new ListNode(carry);
+        }
+        return dummyHead->next;
     }
 };
 

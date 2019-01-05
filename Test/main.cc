@@ -1,6 +1,6 @@
-#include <stdlib.h>
 #include <iostream>
-int main(int argc, char *argv[])
+#include <stdlib.h>
+int main(int argc, char* argv[])
 {
     if (argc != 3)
     {

@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.iconTheme": "vscode-icons",
+    "cmake.configureOnOpen": true,
+    "editor.formatOnType": true,
+    "terminal.integrated.copyOnSelection": true,
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${appName}",
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+}

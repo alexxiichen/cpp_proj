@@ -4,6 +4,9 @@ enable_testing()
 
 ADD_EXECUTABLE(test_main main.cc)
 
+ADD_EXECUTABLE(leveldb_test leveldb_test.cc)
+TARGET_LINK_LIBRARIES(leveldb_test leveldb)
+
 ADD_TEST(NAME test_add_2_3 COMMAND test_main 2 3)
 SET_TESTS_PROPERTIES(test_add_2_3
     PROPERTIES PASS_REGULAR_EXPRESSION "5")

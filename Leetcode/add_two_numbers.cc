@@ -3,7 +3,7 @@
 
 struct ListNode
 {
-    int       val;
+    int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
 };
@@ -17,39 +17,41 @@ class Solution
     {
         unsigned int value1 = 0;
         unsigned int value2 = 0;
-        unsigned int sum    = 0;
+        unsigned int sum = 0;
         do
-        {
-            value1 = value1 * 10 + l1->val;
-        } while ((l1 = l1->next) != nullptr);
+            {
+                value1 = value1 * 10 + l1->val;
+            }
+        while ((l1 = l1->next) != nullptr);
         std::cout << value1 << std::endl;
 
         do
-        {
-            value2 = value2 * 10 + l2->val;
-        } while ((l2 = l2->next) != nullptr);
+            {
+                value2 = value2 * 10 + l2->val;
+            }
+        while ((l2 = l2->next) != nullptr);
         std::cout << value2 << std::endl;
 
         sum = value1 + value2;
         std::cout << sum << std::endl;
         ListNode* headSumlist = nullptr;
-        ListNode* sumlist     = nullptr;
-        char      str[256];
+        ListNode* sumlist = nullptr;
+        char str[256];
         sprintf(str, "%u", sum);
         std::cout << str << std::endl;
 
         for (int i = 0; str[i] != '\0'; i++)
-        {
-            if (i == 0)
             {
-                headSumlist = sumlist = new ListNode(str[i] - '0');
+                if (i == 0)
+                    {
+                        headSumlist = sumlist = new ListNode(str[i] - '0');
+                    }
+                else
+                    {
+                        sumlist->next = new ListNode(str[i] - '0');
+                        sumlist = sumlist->next;
+                    }
             }
-            else
-            {
-                sumlist->next = new ListNode(str[i] - '0');
-                sumlist       = sumlist->next;
-            }
-        }
         return headSumlist;
     }
 
@@ -58,48 +60,48 @@ class Solution
     {
         unsigned int value1 = l1->val;
         unsigned int value2 = l2->val;
-        unsigned int sum    = 0;
+        unsigned int sum = 0;
 
         for (int i = 1; (l1 = l1->next) != nullptr; i++)
-        {
-            value1 = value1 + l1->val * std::pow(10, i);
-        }
+            {
+                value1 = value1 + l1->val * std::pow(10, i);
+            }
         // std::cout << value1 << std::endl;
 
         for (int i = 1; (l2 = l2->next) != nullptr; i++)
-        {
-            value2 = value2 + l2->val * std::pow(10, i);
-        }
+            {
+                value2 = value2 + l2->val * std::pow(10, i);
+            }
         // std::cout << value2 << std::endl;
 
         sum = value1 + value2;
         // std::cout << sum << std::endl;
 
         ListNode* headSumlist = nullptr;
-        ListNode* sumlist     = nullptr;
-        char      str[256];
-        int       i = 0;
+        ListNode* sumlist = nullptr;
+        char str[256];
+        int i = 0;
 
         for (i = 0; sum > 0; i++)
-        {
-            str[i] = sum % 10 + '0';
-            sum    = sum / 10;
-        }
+            {
+                str[i] = sum % 10 + '0';
+                sum = sum / 10;
+            }
         str[i] = '\0';
         // std::cout << str << std::endl;
 
         for (int i = 0; str[i] != '\0'; i++)
-        {
-            if (i == 0)
             {
-                headSumlist = sumlist = new ListNode(str[i] - '0');
+                if (i == 0)
+                    {
+                        headSumlist = sumlist = new ListNode(str[i] - '0');
+                    }
+                else
+                    {
+                        sumlist->next = new ListNode(str[i] - '0');
+                        sumlist = sumlist->next;
+                    }
             }
-            else
-            {
-                sumlist->next = new ListNode(str[i] - '0');
-                sumlist       = sumlist->next;
-            }
-        }
         return headSumlist;
     }
 
@@ -107,27 +109,25 @@ class Solution
     static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
         ListNode* dummyHead = new ListNode(0);
-        ListNode* p         = l1;
-        ListNode* q         = l2;
-        ListNode* curr      = dummyHead;
-        int       carry     = 0;
+        ListNode* p = l1;
+        ListNode* q = l2;
+        ListNode* curr = dummyHead;
+        int carry = 0;
         while (p != nullptr || q != nullptr)
-        {
-            int x      = (p != nullptr) ? p->val : 0;
-            int y      = (q != nullptr) ? q->val : 0;
-            int sum    = carry + x + y;
-            carry      = sum / 10;
-            curr->next = new ListNode(sum % 10);
-            curr       = curr->next;
-            if (p != nullptr)
-                p = p->next;
-            if (q != nullptr)
-                q = q->next;
-        }
+            {
+                int x = (p != nullptr) ? p->val : 0;
+                int y = (q != nullptr) ? q->val : 0;
+                int sum = carry + x + y;
+                carry = sum / 10;
+                curr->next = new ListNode(sum % 10);
+                curr = curr->next;
+                if (p != nullptr) p = p->next;
+                if (q != nullptr) q = q->next;
+            }
         if (carry > 0)
-        {
-            curr->next = new ListNode(carry);
-        }
+            {
+                curr->next = new ListNode(carry);
+            }
         return dummyHead->next;
     }
 };
@@ -135,9 +135,10 @@ class Solution
 static void print(ListNode* head)
 {
     do
-    {
-        std::cout << head->val << "->";
-    } while ((head = head->next) != nullptr);
+        {
+            std::cout << head->val << "->";
+        }
+    while ((head = head->next) != nullptr);
     std::cout << std::endl;
 }
 
@@ -145,22 +146,22 @@ int main(int argc, char const* argv[])
 {
     ListNode* l1head = nullptr;
     ListNode* l2head = nullptr;
-    ListNode* l1     = nullptr;
-    ListNode* l2     = nullptr;
+    ListNode* l1 = nullptr;
+    ListNode* l2 = nullptr;
 
     l1head = l1 = new ListNode(2);
-    l1->next    = new ListNode(4);
-    l1          = l1->next;
-    l1->next    = new ListNode(3);
-    l1          = l1->next;
-    l1->next    = nullptr;
+    l1->next = new ListNode(4);
+    l1 = l1->next;
+    l1->next = new ListNode(3);
+    l1 = l1->next;
+    l1->next = nullptr;
 
     l2head = l2 = new ListNode(5);
-    l2->next    = new ListNode(6);
-    l2          = l2->next;
-    l2->next    = new ListNode(4);
-    l2          = l2->next;
-    l2->next    = nullptr;
+    l2->next = new ListNode(6);
+    l2 = l2->next;
+    l2->next = new ListNode(4);
+    l2 = l2->next;
+    l2->next = nullptr;
 
     ListNode* sumlist = Solution::addTwoNumbers(l1head, l2head);
     print(sumlist);

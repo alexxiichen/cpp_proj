@@ -19,17 +19,15 @@ class Solution
         unsigned int value2 = 0;
         unsigned int sum = 0;
         do
-            {
-                value1 = value1 * 10 + l1->val;
-            }
-        while ((l1 = l1->next) != nullptr);
+        {
+            value1 = value1 * 10 + l1->val;
+        } while ((l1 = l1->next) != nullptr);
         std::cout << value1 << std::endl;
 
         do
-            {
-                value2 = value2 * 10 + l2->val;
-            }
-        while ((l2 = l2->next) != nullptr);
+        {
+            value2 = value2 * 10 + l2->val;
+        } while ((l2 = l2->next) != nullptr);
         std::cout << value2 << std::endl;
 
         sum = value1 + value2;
@@ -41,17 +39,17 @@ class Solution
         std::cout << str << std::endl;
 
         for (int i = 0; str[i] != '\0'; i++)
+        {
+            if (i == 0)
             {
-                if (i == 0)
-                    {
-                        headSumlist = sumlist = new ListNode(str[i] - '0');
-                    }
-                else
-                    {
-                        sumlist->next = new ListNode(str[i] - '0');
-                        sumlist = sumlist->next;
-                    }
+                headSumlist = sumlist = new ListNode(str[i] - '0');
             }
+            else
+            {
+                sumlist->next = new ListNode(str[i] - '0');
+                sumlist = sumlist->next;
+            }
+        }
         return headSumlist;
     }
 
@@ -63,15 +61,15 @@ class Solution
         unsigned int sum = 0;
 
         for (int i = 1; (l1 = l1->next) != nullptr; i++)
-            {
-                value1 = value1 + l1->val * std::pow(10, i);
-            }
+        {
+            value1 = value1 + l1->val * std::pow(10, i);
+        }
         // std::cout << value1 << std::endl;
 
         for (int i = 1; (l2 = l2->next) != nullptr; i++)
-            {
-                value2 = value2 + l2->val * std::pow(10, i);
-            }
+        {
+            value2 = value2 + l2->val * std::pow(10, i);
+        }
         // std::cout << value2 << std::endl;
 
         sum = value1 + value2;
@@ -83,25 +81,25 @@ class Solution
         int i = 0;
 
         for (i = 0; sum > 0; i++)
-            {
-                str[i] = sum % 10 + '0';
-                sum = sum / 10;
-            }
+        {
+            str[i] = sum % 10 + '0';
+            sum = sum / 10;
+        }
         str[i] = '\0';
         // std::cout << str << std::endl;
 
         for (int i = 0; str[i] != '\0'; i++)
+        {
+            if (i == 0)
             {
-                if (i == 0)
-                    {
-                        headSumlist = sumlist = new ListNode(str[i] - '0');
-                    }
-                else
-                    {
-                        sumlist->next = new ListNode(str[i] - '0');
-                        sumlist = sumlist->next;
-                    }
+                headSumlist = sumlist = new ListNode(str[i] - '0');
             }
+            else
+            {
+                sumlist->next = new ListNode(str[i] - '0');
+                sumlist = sumlist->next;
+            }
+        }
         return headSumlist;
     }
 
@@ -114,20 +112,20 @@ class Solution
         ListNode* curr = dummyHead;
         int carry = 0;
         while (p != nullptr || q != nullptr)
-            {
-                int x = (p != nullptr) ? p->val : 0;
-                int y = (q != nullptr) ? q->val : 0;
-                int sum = carry + x + y;
-                carry = sum / 10;
-                curr->next = new ListNode(sum % 10);
-                curr = curr->next;
-                if (p != nullptr) p = p->next;
-                if (q != nullptr) q = q->next;
-            }
+        {
+            int x = (p != nullptr) ? p->val : 0;
+            int y = (q != nullptr) ? q->val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr->next = new ListNode(sum % 10);
+            curr = curr->next;
+            if (p != nullptr) p = p->next;
+            if (q != nullptr) q = q->next;
+        }
         if (carry > 0)
-            {
-                curr->next = new ListNode(carry);
-            }
+        {
+            curr->next = new ListNode(carry);
+        }
         return dummyHead->next;
     }
 };
@@ -135,10 +133,9 @@ class Solution
 static void print(ListNode* head)
 {
     do
-        {
-            std::cout << head->val << "->";
-        }
-    while ((head = head->next) != nullptr);
+    {
+        std::cout << head->val << "->";
+    } while ((head = head->next) != nullptr);
     std::cout << std::endl;
 }
 

@@ -4,7 +4,8 @@
 
 using namespace std;
 
-template <class T> static void print(vector<T> vec)
+template <class T>
+static void print(vector<T> vec)
 {
     cout << "[";
     for (int i = 0; i < vec.size() - 1; i++)

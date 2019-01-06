@@ -54,8 +54,7 @@ class Solution {
         }
         for (int i = 0; i < nums.size(); i++) {
             int complement = target - nums[i];
-            if (unord_map.find(complement) != unord_map.end() &&
-                i != unord_map[complement]) {
+            if (unord_map.find(complement) != unord_map.end() && i != unord_map[complement]) {
                 int result[] = {i, unord_map[complement]};
                 return vector<int>(result, result + 2);
             }
@@ -82,15 +81,11 @@ class Solution {
 };
 
 void trimLeftTrailingSpaces(string& input) {
-    input.erase(input.begin(), find_if(input.begin(), input.end(),
-                                       [](int ch) { return !isspace(ch); }));
+    input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) { return !isspace(ch); }));
 }
 
 void trimRightTrailingSpaces(string& input) {
-    input.erase(find_if(input.rbegin(), input.rend(),
-                        [](int ch) { return !isspace(ch); })
-                    .base(),
-                input.end());
+    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) { return !isspace(ch); }).base(), input.end());
 }
 
 vector<int> stringToIntegerVector(string input) {

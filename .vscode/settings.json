@@ -23,6 +23,9 @@
         "unordered_map": "cpp"
     },
     "clang.cflags": [
-        "std=c++17"
+        "-std=c++11"
+    ],
+    "clang.cxxflags": [
+        "-std=c++11"
     ]
 }

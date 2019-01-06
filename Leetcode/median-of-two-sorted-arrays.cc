@@ -44,23 +44,18 @@ class Solution {
         if (result.size() % 2 != 0) {
             return result[result.size() / 2];
         } else {
-            return (result[result.size() / 2 - 1] + result[result.size() / 2]) /
-                   2.0;
+            return (result[result.size() / 2 - 1] + result[result.size() / 2]) / 2.0;
         }
         return 0;
     }
 };
 
 void trimLeftTrailingSpaces(string& input) {
-    input.erase(input.begin(), find_if(input.begin(), input.end(),
-                                       [](int ch) { return !isspace(ch); }));
+    input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) { return !isspace(ch); }));
 }
 
 void trimRightTrailingSpaces(string& input) {
-    input.erase(find_if(input.rbegin(), input.rend(),
-                        [](int ch) { return !isspace(ch); })
-                    .base(),
-                input.end());
+    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) { return !isspace(ch); }).base(), input.end());
 }
 
 vector<int> stringToIntegerVector(string input) {

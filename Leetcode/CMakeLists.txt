@@ -15,3 +15,6 @@ ADD_EXECUTABLE(longest_substring_without_repeating_characters longest_substring_
 
 #leetcode:4 寻找两个有序数组的中位数
 ADD_EXECUTABLE(median-of-two-sorted-arrays median-of-two-sorted-arrays.cc)
+
+#leetcode:5 最长回文子串
+ADD_EXECUTABLE(longest-palindromic-substring longest-palindromic-substring.cc)

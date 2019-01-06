@@ -9,9 +9,6 @@ link_directories(~/lib)
 add_subdirectory(Leetcode)
 add_subdirectory(Test)
 
-
-add_subdirectory(thirdparty/leveldb)
-add_subdirectory(thirdparty/libco)
 enable_testing()
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

@@ -1,3 +1,21 @@
+/*
+    题目：无重复字符的最长子串
+    给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+    示例 1:
+        输入: "abcabcbb"
+        输出: 3
+        解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+    示例 2:
+        输入: "bbbbb"
+        输出: 1
+        解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+    示例 3:
+        输入: "pwwkew"
+        输出: 3
+        解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+            请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+*/
+
 #include <cassert>
 #include <iostream>
 #include <set>
@@ -5,8 +23,7 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
   public:
     // 暴力法，超时
     // int lengthOfLongestSubstring(string s)
@@ -33,12 +50,10 @@ class Solution
     // }
 
     // 正确解
-    int lengthOfLongestSubstring(string s)
-    {
+    int lengthOfLongestSubstring(string s) {
         int n = s.length(), ans = 0;
         int index[128] = {0};
-        for (int j = 0, i = 0; j < n; j++)
-        {
+        for (int j = 0, i = 0; j < n; j++) {
             i = max(index[s[j]], i);
             ans = max(ans, j - i + 1);
             index[s[j]] = j + 1;
@@ -47,19 +62,15 @@ class Solution
     }
 };
 
-string stringToString(string input)
-{
+string stringToString(string input) {
     assert(input.length() >= 2);
     string result;
-    for (int i = 1; i < input.length() - 1; i++)
-    {
+    for (int i = 1; i < input.length() - 1; i++) {
         char currentChar = input[i];
 
-        if (input[i] == '\\')
-        {
+        if (input[i] == '\\') {
             char nextChar = input[i + 1];
-            switch (nextChar)
-            {
+            switch (nextChar) {
                 case '\"':
                     result.push_back('\"');
                     break;
@@ -88,20 +99,16 @@ string stringToString(string input)
                     break;
             }
             i++;
-        }
-        else
-        {
+        } else {
             result.push_back(currentChar);
         }
     }
     return result;
 }
 
-int main()
-{
+int main() {
     string line;
-    while (getline(cin, line))
-    {
+    while (getline(cin, line)) {
         string s = stringToString(line);
 
         int ret = Solution().lengthOfLongestSubstring(s);

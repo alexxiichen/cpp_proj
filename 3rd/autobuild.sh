@@ -27,12 +27,12 @@ cmake ..
 make -j 24
 cd ../..
 
-cd protobuf
+cd protobuf/cmake
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd -
+cd ../../..
 
 cd snappy
 mkdir build_dir

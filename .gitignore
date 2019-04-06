@@ -1,6 +1,6 @@
 .vscode
 .DS_Store
+build
 GPATH
 GRTAGS
 GTAGS
-build/

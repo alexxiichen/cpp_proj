@@ -4,11 +4,15 @@ CPP_PROJ
 ## Build
 
 ```bash
-$ git submodule init
-$ git submodule update
+$ git submodule update --init --recursive
+
+$ cd 3rd
+$ ./autobuild.sh
+$ cd -
 
 $ mkdir build
 $ cd build
 $ cmake ..
 $ make -j24
+
 ```

@@ -6,16 +6,16 @@
     path = 3rd/googletest
     url = https://github.com/google/googletest
     ignore = dirty
-[submodule "3rd/third/grpc"]
-    path = 3rd/third/grpc
+[submodule "3rd/grpc"]
+    path = 3rd/grpc
     url = https://github.com/grpc/grpc
     ignore = dirty
 [submodule "3rd/leveldb"]
     path = 3rd/leveldb
     url = https://github.com/google/leveldb
     ignore = dirty
-[submodule "3rd/third/rocksdb"]
-    path = 3rd/third/rocksdb
+[submodule "3rd/rocksdb"]
+    path = 3rd/rocksdb
     url = https://github.com/facebook/rocksdb
     ignore = dirty
 [submodule "3rd/snappy"]

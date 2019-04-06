@@ -1,0 +1,32 @@
+[submodule "3rd/protobuf"]
+    path = 3rd/protobuf
+    url = https://github.com/google/protobuf
+    ignore = dirty
+[submodule "3rd/googletest"]
+    path = 3rd/googletest
+    url = https://github.com/google/googletest
+    ignore = dirty
+[submodule "3rd/grpc"]
+    path = 3rd/grpc
+    url = https://github.com/grpc/grpc
+    ignore = dirty
+[submodule "3rd/leveldb"]
+    path = 3rd/leveldb
+    url = https://github.com/google/leveldb
+    ignore = dirty
+[submodule "3rd/rocksdb"]
+    path = 3rd/rocksdb
+    url = https://github.com/facebook/rocksdb
+    ignore = dirty
+[submodule "3rd/snappy"]
+    path = 3rd/snappy
+    url = https://github.com/google/snappy
+    ignore = dirty
+[submodule "3rd/libco"]
+    path = 3rd/libco
+    url = https://github.com/Tencent/libco
+    ignore = dirty
+[submodule "3rd/openssl"]
+    path = 3rd/openssl
+    url = https://github.com/openssl/openssl.git
+    ignore = dirty

@@ -4,46 +4,46 @@ mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -
 
 cd grpc
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -
 
 cd leveldb
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -
 
 cd libco
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -
 
 cd protobuf/cmake
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../../..
+cd -/..
 
 cd snappy
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -
 
 cd rocksdb
 mkdir build_dir
 cd build_dir
 cmake ..
 make -j 24
-cd ../..
+cd -

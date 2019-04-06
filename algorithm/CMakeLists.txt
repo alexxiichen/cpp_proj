@@ -1,0 +1,8 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
+PROJECT(Leetcode VERSION 0.1.0)
+
+INCLUDE(CTest)
+ENABLE_TESTING()
+
+ADD_EXECUTABLE(topk_map topk_map.cc)
+ADD_EXECUTABLE(topk_map_test topk_map_test.cc)

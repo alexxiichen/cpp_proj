@@ -37,3 +37,9 @@
 [submodule "3rd/gperftools"]
 	path = 3rd/gperftools
 	url = https://github.com/gperftools/gperftools
+[submodule "3rd/pprof"]
+	path = 3rd/pprof
+	url = https://github.com/google/pprof
+[submodule "3rd/graphviz"]
+	path = 3rd/graphviz
+	url = https://gitlab.com/graphviz/graphviz

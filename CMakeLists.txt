@@ -7,24 +7,29 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
-include_directories(.)
-include_directories(3rd/googletest/googlemock/include)
-include_directories(3rd/googletest/googletest/include)
-include_directories(3rd/grpc/include)
-include_directories(3rd/leveldb/include)
-include_directories(3rd/libco)
-include_directories(3rd/rocksdb/include)
-include_directories(3rd/snappy)
-include_directories(3rd/openssl/include)
+include_directories(
+    .
+    3rd/googletest/googlemock/include
+    3rd/googletest/googletest/include
+    3rd/grpc/include
+    3rd/leveldb/include
+    3rd/libco
+    3rd/rocksdb/include
+    3rd/snappy
+    3rd/openssl/include
+)
 
-link_directories(3rd/googletest/build_dir/lib)
-link_directories(3rd/grpc/build_dir)
-link_directories(3rd/leveldb/build_dir)
-link_directories(3rd/libco/build_dir)
-link_directories(3rd/protobuf/cmake/build)
-link_directories(3rd/rocksdb/build_dir)
-link_directories(3rd/snappy/cmake)
-link_directories(3rd/openssl)
+link_directories(
+    3rd/googletest/build_dir/lib
+    3rd/grpc/build_dir
+    3rd/leveldb/build_dir
+    3rd/libco/build_dir
+    3rd/protobuf/cmake/build
+    3rd/rocksdb/build_dir
+    3rd/snappy/cmake
+    3rd/openssl
+    3rd/gperftools/.libs
+)
 
 
 add_subdirectory(test)

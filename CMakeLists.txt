@@ -15,14 +15,17 @@ include_directories(3rd/leveldb/include)
 include_directories(3rd/libco)
 include_directories(3rd/rocksdb/include)
 include_directories(3rd/snappy)
+include_directories(3rd/openssl/include)
 
-link_directories(3rd/googletest/build_dir)
+link_directories(3rd/googletest/build_dir/lib)
 link_directories(3rd/grpc/build_dir)
 link_directories(3rd/leveldb/build_dir)
 link_directories(3rd/libco/build_dir)
 link_directories(3rd/protobuf/cmake/build)
 link_directories(3rd/rocksdb/build_dir)
 link_directories(3rd/snappy/cmake)
+link_directories(3rd/openssl)
+
 
 add_subdirectory(test)
 add_subdirectory(algorithm)

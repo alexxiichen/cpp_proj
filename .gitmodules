@@ -35,11 +35,14 @@
 		url = https://github.com/brendangregg/FlameGraph.git
 		ignore = dirty
 [submodule "3rd/gperftools"]
-	path = 3rd/gperftools
-	url = https://github.com/gperftools/gperftools
+		path = 3rd/gperftools
+		url = https://github.com/gperftools/gperftools
+		ignore = dirty
 [submodule "3rd/pprof"]
-	path = 3rd/pprof
-	url = https://github.com/google/pprof
+		path = 3rd/pprof
+		url = https://github.com/google/pprof
+		ignore = dirty
 [submodule "3rd/graphviz"]
-	path = 3rd/graphviz
-	url = https://gitlab.com/graphviz/graphviz
+		path = 3rd/graphviz
+		url = https://gitlab.com/graphviz/graphviz
+		ignore = dirty
